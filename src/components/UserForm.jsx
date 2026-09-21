@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { API_ORIGIN } from '../config'
 
 const emptyValues = { name: '', email: '', password: '', phone: '', address: '' }
 
@@ -73,7 +74,7 @@ function UserForm({ initial, isEdit = false, onSubmit }) {
         }
     }
 
-    const currentImage = initial?.image || ''
+    const currentImage = initial?.image ? `${API_ORIGIN}${initial.image}` : ''
 
     return (
         <form className="card" onSubmit={handleSubmit} noValidate>
