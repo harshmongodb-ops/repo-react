@@ -1,8 +1,7 @@
 import { useNavigate, Link } from 'react-router-dom'
 import axios from 'axios'
 import UserForm from '../components/UserForm'
-
-const API_BASE = 'http://localhost:5000/api/userdata'
+import { API_BASE } from '../config'
 
 // /users/new (admin, logged in) and /signup (public) both render this page.
 function UserCreatePage() {

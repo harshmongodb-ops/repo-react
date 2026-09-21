@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-
-const API_BASE = 'http://localhost:5000/api/userdata'
+import { API_BASE } from '../config'
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 // Plain-JS validation - returns an { field: message } object (empty = valid).

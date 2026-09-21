@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
-
-const API_BASE = 'http://localhost:5000/api/userdata'
-const API_ORIGIN = 'http://localhost:5000'
+import { API_BASE } from '../config'
 
 // /users
 function UsersListPage() {
@@ -83,11 +81,7 @@ function UsersListPage() {
                             <tr key={user._id}>
                                 <td>
                                     {user.image ? (
-                                        <img
-                                            className="thumb"
-                                            src={`${API_ORIGIN}${user.image}`}
-                                            alt={user.name}
-                                        />
+                                        <img className="thumb" src={user.image} alt={user.name} />
                                     ) : (
                                         <span className="muted">—</span>
                                     )}

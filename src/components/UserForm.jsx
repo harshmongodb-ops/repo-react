@@ -4,7 +4,6 @@ const emptyValues = { name: '', email: '', password: '', phone: '', address: '' 
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const PHONE_RE = /^\d{10}$/
-const API_ORIGIN = 'http://localhost:5000'
 
 // Plain-JS validation - returns an { field: message } object (empty = valid).
 function validate(values, { isEdit }) {
@@ -74,7 +73,7 @@ function UserForm({ initial, isEdit = false, onSubmit }) {
         }
     }
 
-    const currentImage = initial?.image ? `${API_ORIGIN}${initial.image}` : ''
+    const currentImage = initial?.image || ''
 
     return (
         <form className="card" onSubmit={handleSubmit} noValidate>
